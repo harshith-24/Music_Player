@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="player-container">
+        <div class="sidebar">
+            <div class="logo">
+               
+                <span>music player</span>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-book"></i>
+                    <span>Your Library</span>
+                </div>
+            </div>
+            <div class="playlist-section">
+                <h2>PLAYLISTS</h2>
+                <div class="create-playlist">
+                    <i class="fas fa-plus"></i>
+                    <span>Create Playlist</span>
+                </div>
+                <div class="liked-songs">
+                    <i class="fas fa-heart"></i>
+                    <span>Liked Songs</span>
+                </div>
+                <div class="playlist-divider"></div>
+                <div class="playlist">
+                    <span>My Favorite Music</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <div class="header-buttons">
+                    <div class="header-button"><i class="fas fa-chevron-left"></i></div>
+                    <div class="header-button"><i class="fas fa-chevron-right"></i></div>
+                </div>
+                <div class="user-menu">
+                    <div class="user-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span>User</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+            
+            <div class="content">
+                <h1>My Playlist</h1>
+                <div class="songs-container">
+                    <table class="songs-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>TITLE</th>
+                                <th>ARTIST</th>
+                                <th>DURATION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playlist">
+                            <!-- Playlist will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="now-playing">
+            <div class="now-playing-left">
+                <div class="album-cover">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="song-details">
+                    <div class="song-name" id="song-name">No song playing</div>
+                    <div class="artist-name" id="artist-name">Unknown Artist</div>
+                </div>
+                <div class="like-button">
+                    <i class="far fa-heart"></i>
+                </div>
+            </div>
+            
+            <div class="now-playing-center">
+                <div class="controls">
+                    <div class="control-button shuffle">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <div class="control-button previous" id="prev-button">
+                        <i class="fas fa-step-backward"></i>
+                    </div>
+                    <div class="control-button play" id="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="control-button next" id="next-button">
+                        <i class="fas fa-step-forward"></i>
+                    </div>
+                    <div class="control-button repeat">
+                        <i class="fas fa-redo-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <span class="current-time" id="current-time">0:00</span>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                        <div class="progress-handle" id="progress-handle"></div>
+                    </div>
+                    <span class="total-time" id="total-time">0:00</span>
+                </div>
+            </div>
+            
+            <div class="now-playing-right">
+                <div class="volume-control">
+                    <i class="fas fa-volume-up" id="volume-icon"></i>
+                    <div class="volume-slider">
+                        <div class="volume-progress" id="volume-progress"></div>
+                        <div class="volume-handle" id="volume-handle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audio-player"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
